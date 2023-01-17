@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        link(rel = 'stylesheet' href='/css/style.css')
+        title Birdnest
+        //- meta(http-equiv="refresh" content="2")
+    body
+        div.container
+            h1.header= 'Pilots who recently violated the NDZ perimeter :('
+            h2.closest= `Overall closest distance: ${closest}m`
+            div.pilotContainer
+                each pilot in pilots
+                    div.card
+                        p= `Name: ${pilot.firstName} ${pilot.lastName}`
+                        p= `Email: ${pilot.email}`
+                        p= `Phone number: ${pilot.phoneNumber}`
+                        p= `Closest recorded distance: ${pilot.closestDistance}m`
+    script(src='/js/index.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js')
